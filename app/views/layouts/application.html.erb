@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project2</title>
+  <title>Studio9</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>Studio9</h1>
+<p>
+  <% if current_user %>
+    Welcome, <%= current_user.email %>
+      |
+    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+  <% else %>
+    <%= link_to 'Login', login_path %>
+      |
+    <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
+</p>
 
 <%= yield %>
 
