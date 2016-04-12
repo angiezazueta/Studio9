@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
-
+  before_action :only_my_posts, only: [:edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @user = current_user
+
   end
 
   def create
@@ -31,6 +32,13 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+
+    if @post.update_attributes(post_params)
+      redirect_to posts_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -44,6 +52,11 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:photo, :caption, :tags, :likes, :picture)
+      params.require(:post).permit(:content, :image_url)
     end
+
+     def only_my_posts
+      redirect_to root_path, notice: "you can't edit someone elses posts" if (current_user != @post.user)
+    end
+
 end

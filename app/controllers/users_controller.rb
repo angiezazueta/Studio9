@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:index, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -7,8 +9,9 @@ class UsersController < ApplicationController
   def show
     @posts = @user.posts
   end
+
   def new
-    @user= User.new
+    @user = User.new
   end
 
   def edit
@@ -16,13 +19,13 @@ class UsersController < ApplicationController
   end
 
   def create
-     user = User.new(user_params)
-    if user.save
-        flash[:success] = 'You are registered!'
-        redirect_to user_path user.id
+    @user = User.new(user_params)
+    session[:remember_token] = @user.id.to_s
+    if @user.save
+      flash[:success] = "You have signed up successfully"
+      redirect_to :root
     else
-        flash[:error] = 'Registration has failed!'
-        redirect_to new_user_path
+      render :new
     end
   end
 
@@ -39,10 +42,11 @@ class UsersController < ApplicationController
   end
 
   private
-    # Implement Strong Params
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    def set_user
+      @user = User.find(params[:id])
     end
 
-
+    def user_params
+      params.require(:user).permit(:firstName, :lastName, :email, :about, :password, :password_confirmation, :picture)
+    end
 end

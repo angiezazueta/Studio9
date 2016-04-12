@@ -4,6 +4,6 @@ A mobile responsive rails app where students of WDI 9 can feel free to upload, l
 
 Studio 9
 
-Used:
-rails
+Built Using:
+Ruby on Rails
 

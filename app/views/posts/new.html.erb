@@ -1,1 +1,21 @@
 
+<h1>Add Photo</h1>
+
+<%= form_for @post do |f| %>
+    <div>
+        <%= f.label :image_url %>
+        <%= f.text_field :image_url %>
+    </div>
+
+
+    <div>
+        <%= f.label :content %>
+        <%= f.text_field :content %>
+    </div>
+
+
+    <%= f.submit "Submit Post!" %>
+
+<% end %>
+
+<%= link_to "Back to the list!", posts_path %>

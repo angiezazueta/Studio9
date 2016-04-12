@@ -1,2 +1,20 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit Post</h1>
+
+<%= form_for @post do |f| %>
+
+<div>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+</div>
+<div>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+</div>
+
+<%= f.submit "Submit these changes!" %>
+
+<% end %>
+
+<%= link_to 'View', @post %> |
+<%= link_to 'Back', posts_path %> |
+<%= link_to 'Delete', posts_path, method: "delete" %>

@@ -16,11 +16,14 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.photo %></td>
-        <td><%= post.caption %></td>
-        <td><%= post.tags %></td>
-        <td><%= post.likes %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td>
+          <% if post.image_url %>
+            <%= image_tag post.image_url, class: "index-image" %>
+          <% end %>
+        </td>
+        <td><%= post.content %></td>
+
+        <td><%= link_to 'View', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -31,3 +34,4 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
