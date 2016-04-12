@@ -21,7 +21,12 @@
             <%= image_tag post.image_url, class: "index-image" %>
           <% end %>
         </td>
-        <td><%= post.content %></td>
+
+        <td class="content"> <%= post.content %>
+          <% if post.image.present? %>
+        <%= image_tag post.image.url(:medium) %>
+        <% end %>
+        </td>
 
         <td><%= link_to 'View', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
