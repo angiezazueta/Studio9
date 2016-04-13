@@ -1,5 +1,9 @@
-<h1> <%= @post.content %> </h1>
 
+ <% if @post.image.present? %>
+     <%= image_tag @post.image.url(:medium) %>
+<% end %>
+
+<h2> <%= @post.content %> </h2>
 
 
 <%= link_to "Back to the list!", posts_path %>

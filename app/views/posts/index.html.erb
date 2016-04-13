@@ -31,8 +31,20 @@
         <td><%= link_to 'View', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+      <%= form_for post.comments.build do |f| %>
+      <%= f.label :Comment %>
+      <%= f.text_field :content %>
+      <%= f.hidden_field :post_id %>
+      <%= f.submit %>
+        <% end %>
+        </td>
+
       </tr>
+
     <% end %>
+
+
   </tbody>
 </table>
 
