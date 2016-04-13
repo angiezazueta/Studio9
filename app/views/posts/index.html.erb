@@ -24,8 +24,8 @@
 
         <td class="content"> <%= post.content %>
           <% if post.image.present? %>
-        <%= image_tag post.image.url(:medium) %>
-        <% end %>
+            <%= image_tag post.image.url(:medium) %>
+          <% end %>
         </td>
 
         <td><%= link_to 'View', post %></td>

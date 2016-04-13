@@ -2,20 +2,15 @@
 <h1>Add Photo</h1>
 
 <%= form_for @post do |f| %>
-    <div>
-        <%= f.label :image_url %>
-        <%= f.text_field :image_url %>
-    </div>
 
-
-    <div>
-        <%= f.label :content %>
-        <%= f.text_field :content %>
-    </div>
     <%= f.file_field :image %>
 
-    <%= f.submit "Submit Post!" %>
+    <div>
+        <%= f.label :caption %>
+        <%= f.text_field :content %>
+    </div>
+    <%= f.submit "Submit Photo!" %>
 
 <% end %>
 
-<%= link_to "Back to the list!", posts_path %>
+<%= link_to "Back to Posts!", posts_path %>
