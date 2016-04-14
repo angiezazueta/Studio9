@@ -4,7 +4,7 @@
 
 <h1>Add Photo</h1>
 <div class="well bs-component">
-<%= form_for @post do |f| %>
+<%= form_for @post, html: { multipart: true, class: "custom" } do |f| %>
 
 <form class="form">
   <fieldset>
@@ -12,23 +12,17 @@
       <label for="inputPicture" class="col-lg-2 control-label">Picture</label>
       <div class="col-lg-10">
 
-         <%= f.file_field :image, class: "form-control", placeholder: "Picture" %>
+        <%= f.file_field :picture, class: "form-control", placeholder: "Picture" %>
       </div>
     </div>
 
     <div class="form-group">
       <label for="inputCaption" class="col-lg-2 control-label">Caption</label>
       <div class="col-lg-10">
-        <%= f.text_field :content, class: "form-control", placeholder: "Caption" %>
+        <%= f.text_field :caption, class: "form-control", placeholder: "Caption" %>
       </div>
     </div>
 
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <%= link_to "Cancel", posts_path, class: "btn btn-default" %>
-        <%= f.submit class: "btn btn-primary btn-default", value: "Submit"%>
-      </div>
-    </div>
 
   </fieldset>
 </form>

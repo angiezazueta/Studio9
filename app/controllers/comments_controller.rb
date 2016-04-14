@@ -22,6 +22,8 @@ class CommentsController < ApplicationController
   end
 
   def create
+
+    @user = current_user
     @comment = Comment.new(params.require(:comment).permit(:content, :user_id, :post_id))
     @comment.user = current_user
 

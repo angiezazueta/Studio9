@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
@@ -5,12 +6,12 @@ class PostsController < ApplicationController
 
   def index
     @user = current_user
-    @posts = Post.all
+    @posts = Post.paginate(:page => params[:page], :per_page => 3)
   end
 
   def show
     @post = Post.find(params[:id])
-    @comment = @post.comments.build
+    @comments = @post.comments
   end
 
   def new
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @user = current_user
 
   end
 

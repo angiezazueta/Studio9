@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
 
   resources :users, except: [:index, :destroy]
-  resources :sessions, only: [:new, :create, :destroy]
+
   resources :posts
   resources :comments
+
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
