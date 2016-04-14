@@ -1,9 +1,16 @@
+<div class="row post">
 
- <% if @post.image.present? %>
-     <%= image_tag @post.image.url(:medium) %>
-<% end %>
+<!-- photos -->
+<div class="col-sm-7 col-sm-push-5 photo-column">
+  <% if @post.image.present? %>
+     <%= image_tag @post.image.url(:medium),class: "img-responsive img-rounded" %>
+  <% end %>
 
-<h2> <%= @post.content %> </h2>
+  <div class="post-details">
+    <h1><%= @post.content %></h1>
+
+  </div>
+
 
 
 <%= link_to "Back to the list!", posts_path %>

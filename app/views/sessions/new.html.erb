@@ -1,15 +1,41 @@
-<h1>Login</h1>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
 
-<%= form_tag sessions_path do %>
-    <% flash.each do |key, msg| %>
-        <div><%= msg %></div>
-    <% end %>
+<h1>Log In</h1>
+<div class="well bs-component">
+<%= form_for :session, :url => sessions_path do |f| %>
 
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+<form class="form">
+  <fieldset>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
 
-    <%= submit_tag "Log in" %>
+        <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "Email" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <%= password_field_tag :password, class: "form-control", placeholder: "Password" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= link_to "Cancel", root_path, class: "btn btn-default" %>
+        <%= f.submit class: "btn btn-primary btn-default", value: "Submit"%>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
 <% end %>
+</div>
+
+<p>   New user? <%= link_to "Sign up now!", new_user_path %></p>
+  </div>
+</div>
+

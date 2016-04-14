@@ -1,52 +1,47 @@
 <h1>All Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Caption</th>
-      <th>Tags</th>
-      <th>Likes</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @posts.each do |post| %>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td>
-          <% if post.image_url %>
-            <%= image_tag post.image_url, class: "index-image" %>
-          <% end %>
-        </td>
+  <% if post.image_url %>
+  <%= image_tag post.image_url, class: "index-image" %>
+  <% end %>
 
-        <td class="content"> <%= post.content %>
-          <% if post.image.present? %>
-            <%= image_tag post.image.url(:medium) %>
-          <% end %>
-        </td>
-
-        <td><%= link_to 'View', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-      <%= form_for post.comments.build do |f| %>
-      <%= f.label :Comment %>
-      <%= f.text_field :content %>
-      <%= f.hidden_field :post_id %>
-      <%= f.submit %>
-        <% end %>
-        </td>
-
-      </tr>
-
-    <% end %>
+<br>
+<%= post.content %>
+<% if post.image.present? %>
+<%= image_tag post.image.url(:medium) %>
+<% end %>
+<br>
 
 
-  </tbody>
-</table>
+<%= link_to 'View', post %>
+<%= link_to 'Edit Caption', edit_post_path(post) %>
+<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<br>
+<div class="bubble">
+<ul>
+  <% post.comments.each do |comment| %>
+  <li><%= comment.content %></li>
+  <% end %>
+</ul>
+</div>
+<br>
+<%= form_for post.comments.build do |f| %>
+<%= f.label :Comment %>
+<%= f.text_field :content %>
+<%= f.hidden_field :post_id %>
+<%= f.submit %>
+
+<% end %>
+
+
+
+
+<% end %>
+
+
+
 
 <br>
 
