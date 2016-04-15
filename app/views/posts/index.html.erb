@@ -1,27 +1,32 @@
 <h1>All Posts</h1>
 
 <% @posts.each do |post| %>
-  <% if post.image_url %>
-  <%= image_tag post.image_url, class: "index-image" %>
-  <% end %>
 
-
+<div class="row">
 <br>
+<div class="r col-md-6 col-md-push-6">
 <div class="image">
-<%= post.content %>
 <% if post.image.present? %>
 <%= image_tag post.image.url(:medium) %>
 <% end %>
 </div>
 
+<div class="caption">
+<%= post.content %>
+</div>
+
+<br>
 
 <div class="options">
 <%= link_to 'View', post %>
 <%= link_to 'Edit Caption', edit_post_path(post) %>
 <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
+</div>
 
 <br>
+
+<div class="l col-md-6 col-md-pull-6">
 <div class="bubble">
 <ul>
   <% post.comments.each do |comment| %>
@@ -39,12 +44,11 @@
 <%= f.text_field :content %>
 <%= f.hidden_field :post_id %>
 <%= f.submit %>
-</div>
 <% end %>
+</div>
 
-
-
-
+</div>
+</div>
 <% end %>
 
 

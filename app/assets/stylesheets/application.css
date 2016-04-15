@@ -19,7 +19,7 @@ body {
 
 .image {
 
-  float: right
+  text-align: right;
 }
 
 .comment_box {
@@ -27,9 +27,32 @@ body {
 }
 
 .bubble {
-
+position: relative;
+padding: 4px;
+background: #FFFF9D;
+-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
+word-wrap: break-word;
+min-height: 100px;
 
 }
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 15px 0 15px 15px;
+border-color: transparent #FFFF9D;
+display: block;
+width: 0;
+z-index: 1;
+right: -15px;
+top: 41px;
+}
+
+
 
 h1 {
   text-align: center;
@@ -37,4 +60,8 @@ h1 {
 
 .options {
   text-align: right;
+}
+
+.caption {
+text-align: right;
 }

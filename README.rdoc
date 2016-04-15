@@ -1,9 +1,13 @@
 Project 2 at WDI
+Studio 9
 
 A mobile responsive rails app where students of WDI 9 can feel free to upload and comment photos throughout the course.
 
-Studio 9
 
-Built Using:
+Built using:
+
 Ruby on Rails
+HTML/CSS
+Bootstrap
+Paperclip
 
