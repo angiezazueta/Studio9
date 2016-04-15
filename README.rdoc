@@ -6,18 +6,18 @@ A mobile responsive rails app where students of WDI 9 can feel free to upload an
 https://studio-9.herokuapp.com/
 
 Technology Used:
-Ruby
-Rails
-Postgresql (for database)
+Ruby,
+Rails,
+Postgresql (for database),
 HTML
 
-Design
-CSS Bootstrap (for design)
+Design:
+CSS Bootstrap (for design),
 Paperclip (for uploading images)
 
 
-Get started
-Create a account
-Go to the Post feed to see what other users post
-Capture every moment to share with classmates and friends
+Get started!
+Create a account,
+Go to the Post feed to see what other users post,
+Capture every moment to share with classmates and friends,
 Click the New Post button to share your images instantly
