@@ -1,13 +1,23 @@
-Project 2 at WDI
 Studio 9
+Project 2 at WDI
 
 A mobile responsive rails app where students of WDI 9 can feel free to upload and comment photos throughout the course.
 
+https://studio-9.herokuapp.com/
 
-Built using:
+Technology Used:
+Ruby
+Rails
+Postgresql (for database)
+HTML
 
-Ruby on Rails
-HTML/CSS
-Bootstrap
-Paperclip
+Design
+CSS Bootstrap (for design)
+Paperclip (for uploading images)
 
+
+Get started
+Create a account
+Go to the Post feed to see what other users post
+Capture every moment to share with classmates and friends
+Click the New Post button to share your images instantly

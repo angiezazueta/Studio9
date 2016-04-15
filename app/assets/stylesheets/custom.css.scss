@@ -1,6 +1,5 @@
 
 
-
 h1{
   margin-top: 0;
 }
@@ -72,16 +71,6 @@ input.form-control {
   padding: 20px 20px 10px 20px;
 }
 
-.img-profile {
-  margin-left: 4px;
-}
-
-.btn-group {
-  margin-top: 10px;
-}
-.post-details .btn {
-  margin-top: 10px;
-}
 
 .pagination li a,
 .pagination li span {
@@ -113,27 +102,10 @@ input.form-control {
   float: right;
 }
 
-@media (max-width: 768px) {
-
-  .photo-column img {
-    margin: 0 0 0 auto;
-  }
-  .comments-column {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
-  .post-details {
-    text-align: right;
-    padding: 5px;
-  }
-  .btn-group {
-    margin-right: -8px;
-    margin-left: 15px;
-  }
   .pagination {
     margin: 0 auto;
   }
-}
+
 
 .jumbotron {
   text-align: center;

@@ -14,13 +14,11 @@
  *= require_self
  */
 body {
-  background-image: url();
+
 }
 
 .image {
-  display: block;
-  max-width: 100%;
-  height: auto;
+
   text-align: right;
 }
 
@@ -62,10 +60,8 @@ h1 {
 
 .options {
   text-align: right;
-  font-size: 20px;
 }
 
 .caption {
 text-align: right;
-font-size: 25px;
 }
