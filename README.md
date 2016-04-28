@@ -11,7 +11,8 @@ https://studio-9.herokuapp.com/
 ___
 
 <p align="center">
-<img src="http://i.imgur.com/3xCP3Cl.png" width="300px" height="650px"/>
+
+![](http://i.imgur.com/3xCP3Cl.png =300x)
 
 </p>
 
